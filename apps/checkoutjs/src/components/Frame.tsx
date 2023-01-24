@@ -1,6 +1,12 @@
-import { useState } from "preact/hooks";
+import { CheckoutButton } from "../types/CheckoutButton";
 
-export const Frame = () => {
+interface FrameProps {
+    button: CheckoutButton;
+}
+
+export const Frame = ({ button }: FrameProps) => {
+    console.log("Opening checkout for button", button);
+
     return (
         <iframe
             style={{

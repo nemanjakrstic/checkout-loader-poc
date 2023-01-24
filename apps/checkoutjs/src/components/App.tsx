@@ -1,10 +1,11 @@
 import { useState } from "preact/hooks";
 import { CheckoutButton } from "../types/CheckoutButton";
+import { queryButtons } from "../utils/queryButtons";
 import { Button } from "./Button";
 import { Frame } from "./Frame";
 
 export const App = () => {
-    const buttons = getBookingButtons();
+    const buttons = queryButtons();
     const [selectedButton, setSelectedButton] = useState<CheckoutButton>();
 
     const handleButtonClick = (params: CheckoutButton) => {
@@ -14,14 +15,10 @@ export const App = () => {
     return (
         <>
             {buttons.map((button) => (
-                <Button button={button} onClick={handleButtonClick} />
+                <Button element={button} onClick={handleButtonClick} />
             ))}
 
-            {selectedButton ? <Frame /> : null}
+            {selectedButton ? <Frame button={selectedButton} /> : null}
         </>
     );
-};
-
-const getBookingButtons = () => {
-    return [...document.querySelectorAll(".xola-checkout")] as HTMLDivElement[];
 };

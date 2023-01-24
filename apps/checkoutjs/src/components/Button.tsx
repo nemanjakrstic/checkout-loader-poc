@@ -2,25 +2,32 @@ import { createPortal } from "preact/compat";
 import { CheckoutButton } from "../types/CheckoutButton";
 
 interface ButtonProps {
-    button: HTMLDivElement;
+    element: HTMLDivElement;
     onClick: (params: CheckoutButton) => void;
 }
 
-export const Button = ({ button, onClick }: ButtonProps) => {
+export const Button = ({ element, onClick }: ButtonProps) => {
     const handleClick = () => {
         onClick({
-            seller: button.dataset.seller!,
-            button: button.dataset.button,
+            seller: element.dataset.seller!,
+            button: element.dataset.button,
         });
     };
 
     return createPortal(
         <button
-            style={{ borderRadius: 8, padding: "8px 16px", backgroundColor: "green", color: "white" }}
+            style={{
+                borderRadius: 6,
+                padding: "16px 32px",
+                backgroundColor: "green",
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 20,
+            }}
             onClick={handleClick}
         >
             Book Now
         </button>,
-        button,
+        element,
     );
 };
