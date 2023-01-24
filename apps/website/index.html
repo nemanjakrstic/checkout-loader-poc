@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="/index.css" />
+    </head>
+
+    <body class="p-4">
+        <div>
+            <h1 class="font-bold text-white">Welcome to Seller Website</h1>
+
+            <!-- Xola Button -->
+            <div class="xola-checkout" data-seller="57e4a620c683b1c01e8b4575" data-version="2"></div>
+        </div>
+
+        <!-- Xola Checkout Script -->
+        <script type="text/javascript">
+            (function () {
+                var co = document.createElement("script");
+                co.type = "text/javascript";
+                co.async = true;
+                co.src = "http://localhost:3040/checkout.umd.cjs";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(co, s);
+            })();
+        </script>
+    </body>
+</html>

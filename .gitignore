@@ -1,0 +1,6 @@
+.next
+.turbo
+build
+dist
+node_modules
+next-env.d.ts

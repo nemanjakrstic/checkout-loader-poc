@@ -1,0 +1,9 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "serve -p 8000"
+    },
+    "dependencies": {
+        "serve": "^14.1.2"
+    }
+}
